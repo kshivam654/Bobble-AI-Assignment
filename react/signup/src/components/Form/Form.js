@@ -29,7 +29,7 @@ const Form = () => {
       // Call to API
       console.log(formData);
 
-      axios.post(`https://reqres.in/`, { formData })
+      axios.post(`https://reqres.in/api/users`, { formData })
       .then(res => {
         console.log(res);
         console.log(res.data);
