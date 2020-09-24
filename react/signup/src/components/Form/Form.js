@@ -3,6 +3,7 @@ import "./Form.css";
 import ReactDOM from "react-dom";
 import GoogleLogin from "react-google-login";
 import Facebook from './Facebook';
+import axios from 'axios';
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +28,13 @@ const Form = () => {
       // Handle Api Submission Here
       // Call to API
       console.log(formData);
+
+      axios.post(`https://reqres.in/`, { formData })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+
     }
   };
 
